@@ -86,14 +86,14 @@ const Index = () => {
                   <Calendar className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
                 </Button>
                 
-                <Button 
+                {/* <Button 
                   variant="outline" 
                   size="lg"
                   className="group border-2 border-blue-500 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-lg"
                 >
                   <Play className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   شاهد الفيديو
-                </Button>
+                </Button> */}
               </div>
               
               <div className="flex items-center space-x-6 space-x-reverse pt-8">
@@ -120,7 +120,7 @@ const Index = () => {
               <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-3xl p-8 animate-float shadow-2xl transition-all duration-700 group-hover:shadow-3xl">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
+                    src="home-page-image.jpg" 
                     alt="Healthcare Professional" 
                     className="w-full h-96 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                   />
@@ -128,16 +128,16 @@ const Index = () => {
                 </div>
               </div>
               
-              {/* Enhanced Floating Cards */}
+              {/* Medical Achievement Badges */}
               <Card className="absolute -top-4 right-4 bg-white/95 backdrop-blur-sm shadow-xl animate-float border-0 transition-all duration-500 hover:shadow-2xl hover:scale-105">
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-3 space-x-reverse">
-                    <div className="bg-gradient-to-br from-green-400 to-emerald-500 p-2 rounded-full shadow-lg">
-                      <CheckCircle className="h-6 w-6 text-white" />
+                    <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-2 rounded-full shadow-lg">
+                      <Award className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-gray-800">موعد مؤكد</p>
-                      <p className="text-xs text-gray-500">اليوم 3:00 م</p>
+                      <p className="font-semibold text-sm text-gray-800">مركز معتمد</p>
+                      <p className="text-xs text-gray-500">معايير الجودة العالمية</p>
                     </div>
                   </div>
                 </CardContent>
@@ -146,12 +146,12 @@ const Index = () => {
               <Card className="absolute -bottom-4 left-4 bg-white/95 backdrop-blur-sm shadow-xl animate-float border-0 transition-all duration-500 hover:shadow-2xl hover:scale-105" style={{ animationDelay: '1s' }}>
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-3 space-x-reverse">
-                    <div className="bg-gradient-to-br from-blue-400 to-blue-600 p-2 rounded-full shadow-lg">
-                      <Clock className="h-6 w-6 text-white" />
+                    <div className="bg-gradient-to-br from-green-400 to-emerald-500 p-2 rounded-full shadow-lg">
+                      <Activity className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-gray-800">متاح الآن</p>
-                      <p className="text-xs text-gray-500">د. أحمد محمد</p>
+                      <p className="font-semibold text-sm text-gray-800">خدمة 24/7</p>
+                      <p className="text-xs text-gray-500">رعاية طبية متواصلة</p>
                     </div>
                   </div>
                 </CardContent>

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { 
+import {
   createBrowserRouter,
   RouterProvider,
   createRoutesFromElements,
@@ -39,7 +39,7 @@ const router = createBrowserRouter(
       <Route path="/services" element={<Services />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/contact" element={<Contact />} />
-      
+
       {/* Wrap all booking routes in BookingLayout */}
       <Route element={<BookingLayout />}>
         <Route path="/booking/:doctorId" element={<BookingFlow />} />
@@ -49,7 +49,7 @@ const router = createBrowserRouter(
         <Route path="/booking/:doctorId/review" element={<BookingReview />} />
         <Route path="/booking/:doctorId/confirmation" element={<BookingConfirmation />} />
       </Route>
-      
+
       <Route path="*" element={<NotFound />} />
     </Route>
   ),
