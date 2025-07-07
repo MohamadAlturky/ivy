@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calendar, Clock, Users, Award, ArrowLeft, Play, CheckCircle, Star, Stethoscope, Heart, Activity, Pill, Syringe, Thermometer, Microscope, Clipboard } from 'lucide-react';
+import { Calendar, Clock, Users, Award, ArrowLeft, Play, CheckCircle, Star, Stethoscope, Syringe, Activity, Pill, Thermometer, Microscope, Clipboard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
@@ -13,7 +13,7 @@ const Index = () => {
     { icon: Users, value: '10,000+', label: 'مريض سعيد' },
     { icon: Stethoscope, value: '500+', label: 'طبيب متخصص' },
     { icon: Award, value: '15+', label: 'سنة خبرة' },
-    { icon: Heart, value: '24/7', label: 'خدمة متواصلة' },
+    { icon: Syringe, value: '24/7', label: 'خدمة متواصلة' },
   ];
 
   const services = [
@@ -30,7 +30,7 @@ const Index = () => {
     {
       title: 'خدمات الطوارئ',
       description: 'خدمات طوارئ متaحة على مدار الساعة',
-      icon: Heart,
+      icon: Syringe,
     },
   ];
 
@@ -60,17 +60,17 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Medical Background Animation */}
         <div className="medical-background">
-          {/* Horizontal Moving Hearts */}
-          <Heart className="floating-icon move-right speed-1 text-red-500/20" style={{ top: '15%', width: '64px', height: '64px' }} />
-          <Heart className="floating-icon move-left speed-2 delay-2 text-pink-500/20" style={{ top: '35%', width: '56px', height: '56px' }} />
-          <Heart className="floating-icon move-right speed-3 delay-4 text-rose-500/20" style={{ top: '55%', width: '48px', height: '48px' }} />
-          <Heart className="floating-icon move-left speed-4 delay-6 text-red-400/20" style={{ top: '75%', width: '52px', height: '52px' }} />
+          {/* Horizontal Moving Syringes */}
+          <Syringe className="floating-icon move-right speed-1 text-red-500/20" style={{ top: '15%', width: '64px', height: '64px' }} />
+          <Syringe className="floating-icon move-left speed-2 delay-2 text-pink-500/20" style={{ top: '35%', width: '56px', height: '56px' }} />
+          <Syringe className="floating-icon move-right speed-3 delay-4 text-rose-500/20" style={{ top: '55%', width: '48px', height: '48px' }} />
+          <Syringe className="floating-icon move-left speed-4 delay-6 text-red-400/20" style={{ top: '75%', width: '52px', height: '52px' }} />
 
-          {/* Diagonal Moving Hearts */}
-          <Heart className="floating-icon move-diagonal-right speed-2 delay-1 text-pink-400/20" style={{ width: '58px', height: '58px' }} />
-          <Heart className="floating-icon move-diagonal-left speed-3 delay-3 text-rose-400/20" style={{ width: '50px', height: '50px' }} />
-          <Heart className="floating-icon move-diagonal-right speed-4 delay-5 text-red-500/20" style={{ width: '54px', height: '54px' }} />
-          <Heart className="floating-icon move-diagonal-left speed-5 delay-7 text-pink-500/20" style={{ width: '46px', height: '46px' }} />
+          {/* Diagonal Moving Syringes */}
+          <Syringe className="floating-icon move-diagonal-right speed-2 delay-1 text-pink-400/20" style={{ width: '58px', height: '58px' }} />
+          <Syringe className="floating-icon move-diagonal-left speed-3 delay-3 text-rose-400/20" style={{ width: '50px', height: '50px' }} />
+          <Syringe className="floating-icon move-diagonal-right speed-4 delay-5 text-red-500/20" style={{ width: '54px', height: '54px' }} />
+          <Syringe className="floating-icon move-diagonal-left speed-5 delay-7 text-pink-500/20" style={{ width: '46px', height: '46px' }} />
 
           {/* Floating Medical Icons */}
           {/* First Row */}
@@ -128,25 +128,25 @@ const Index = () => {
               <div className="flex items-center space-x-6 space-x-reverse pt-8">
                 <div className="flex items-center">
                   <div className="flex items-center justify-center">
-                    <svg
-                      className="w-32 h-20 animate-heartbeat"
-                      viewBox="0 0 100 30"
-                      fill="none"
-                    >
-                      <defs>
-                        <linearGradient id="heartbeat-gradient" x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stopColor="#2563eb" /> {/* blue-600 */}
-                          <stop offset="50%" stopColor="#06b6d4" /> {/* cyan-500 */}
-                          <stop offset="100%" stopColor="#1d4ed8" /> {/* blue-700 */}
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d="M 0 15 L 20 15 L 25 5 L 30 25 L 35 15 L 50 15 L 55 10 L 60 20 L 65 15 L 100 15"
-                        className="heartbeat-path"
-                        stroke="url(#heartbeat-gradient)"
-                        strokeWidth="2"
-                      />
-                    </svg>
+                      <svg
+                        className="w-32 h-20"
+                        viewBox="0 0 100 30"
+                        fill="none"
+                      >
+                        <defs>
+                          <linearGradient id="heartbeat-gradient" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0%" stopColor="#2563eb" />
+                            <stop offset="50%" stopColor="#06b6d4" />
+                            <stop offset="100%" stopColor="#1d4ed8" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          d="M 0 15 L 20 15 L 25 5 L 30 25 L 35 15 L 50 15 L 55 10 L 60 20 L 65 15 L 100 15"
+                          className="heartbeat-path"
+                          stroke="url(#heartbeat-gradient)"
+                          strokeWidth="2"
+                        />
+                      </svg>
                   </div>
                   <div className="mr-4">
                     <p className="text-sm text-gray-600">أكثر من 10,000 مريض</p>

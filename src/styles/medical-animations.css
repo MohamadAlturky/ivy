@@ -1,19 +1,18 @@
 /* Medical Background Animations */
 .medical-background {
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   pointer-events: none;
-  z-index: 0;
 }
 
 .floating-icon {
   position: absolute;
-  opacity: 0.1;
-  transform-origin: center;
+  opacity: 0.5;
 }
 
-/* Heartbeat Animation */
+/* Heartbeat Animation for scaling and opacity */
 @keyframes heartbeat {
   0% {
     transform: scale(1);
@@ -148,30 +147,262 @@
 }
 
 /* Animation speeds */
-.speed-1 { animation-duration: 15s; }
-.speed-2 { animation-duration: 20s; }
-.speed-3 { animation-duration: 25s; }
-.speed-4 { animation-duration: 30s; }
-.speed-5 { animation-duration: 35s; }
-
-/* Delay classes */
-.delay-1 { animation-delay: 2s; }
-.delay-2 { animation-delay: 4s; }
-.delay-3 { animation-delay: 6s; }
-.delay-4 { animation-delay: 8s; }
-.delay-5 { animation-delay: 10s; }
-.delay-6 { animation-delay: 12s; }
-.delay-7 { animation-delay: 14s; }
-.delay-8 { animation-delay: 16s; }
-
-.heartbeat-path {
-  stroke-dasharray: 120;
-  stroke-dashoffset: 120;
-  animation: dash 1.7s linear infinite;
+.speed-1 {
+  animation-duration: 15s;
+}
+.speed-2 {
+  animation-duration: 20s;
+}
+.speed-3 {
+  animation-duration: 25s;
+}
+.speed-4 {
+  animation-duration: 30s;
+}
+.speed-5 {
+  animation-duration: 35s;
 }
 
+/* Delay classes */
+.delay-1 {
+  animation-delay: 2s;
+}
+.delay-2 {
+  animation-delay: 4s;
+}
+.delay-3 {
+  animation-delay: 6s;
+}
+.delay-4 {
+  animation-delay: 8s;
+}
+.delay-5 {
+  animation-delay: 10s;
+}
+.delay-6 {
+  animation-delay: 12s;
+}
+.delay-7 {
+  animation-delay: 14s;
+}
+.delay-8 {
+  animation-delay: 16s;
+}
+
+/* Dash animation for the heartbeat path */
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
   }
-} 
+}
+
+.heartbeat-path {
+  stroke-dasharray: 120; /* Adjust this value based on your path length */
+  stroke-dashoffset: 120; /* Same as stroke-dasharray */
+  animation: dash 1.7s linear infinite, heartbeat 1.7s ease-in-out infinite; /* Combined animations */
+}
+
+
+/* Movement Animations */
+@keyframes moveRight {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes moveDiagonalRight {
+  0% {
+    transform: translate(-100%, 100%);
+  }
+  100% {
+    transform: translate(100%, -100%);
+  }
+}
+
+@keyframes moveDiagonalLeft {
+  0% {
+    transform: translate(100%, 100%);
+  }
+  100% {
+    transform: translate(-100%, -100%);
+  }
+}
+
+/* New DNA Rotation Animation */
+@keyframes rotateDna {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rotateDnaReverse {
+  0% {
+    transform: rotate(360deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Pulse Ring Animation */
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+/* Bounce Subtle Animation */
+@keyframes bounceSubtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse Fade Animation */
+@keyframes pulseFade {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+/* Spin Slow Animation */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Classes */
+.move-right {
+  animation: moveRight var(--speed) linear infinite;
+}
+.move-left {
+  animation: moveLeft var(--speed) linear infinite;
+}
+.move-diagonal-right {
+  animation: moveDiagonalRight var(--speed) linear infinite;
+}
+.move-diagonal-left {
+  animation: moveDiagonalLeft var(--speed) linear infinite;
+}
+.rotate-dna {
+  animation: rotateDna 8s ease-in-out infinite;
+}
+.rotate-dna-reverse {
+  animation: rotateDnaReverse 8s ease-in-out infinite;
+}
+.bounce-subtle {
+  animation: bounceSubtle 3s ease-in-out infinite;
+}
+.pulse-fade {
+  animation: pulseFade 3s ease-in-out infinite;
+}
+.animate-pulse-ring {
+  animation: pulseRing 3s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* Speed Variables */
+.speed-1 {
+  --speed: 20s;
+}
+.speed-2 {
+  --speed: 25s;
+}
+.speed-3 {
+  --speed: 30s;
+}
+.speed-4 {
+  --speed: 35s;
+}
+.speed-5 {
+  --speed: 40s;
+}
+
+/* Delay Classes */
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+.delay-2000 {
+  animation-delay: 2000ms;
+}
+
+/* Medical Shapes */
+.medical-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+.medical-shape-1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 15%;
+}
+
+.medical-shape-2 {
+  width: 250px;
+  height: 250px;
+  bottom: 20%;
+  right: 15%;
+}
+
+.medical-shape-3 {
+  width: 200px;
+  height: 200px;
+  top: 40%;
+  right: 25%;
+}
+
+.medical-shape-4 {
+  width: 180px;
+  height: 180px;
+  bottom: 35%;
+  left: 25%;
+}
