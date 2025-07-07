@@ -1,0 +1,177 @@
+/* Medical Background Animations */
+.medical-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-icon {
+  position: absolute;
+  opacity: 0.1;
+  transform-origin: center;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  25% {
+    transform: scale(1.1);
+    opacity: 0.15;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+}
+
+/* Horizontal movement with heartbeat */
+@keyframes move-across-right {
+  0% {
+    transform: translateX(-100%) scale(1);
+    opacity: 0.05;
+  }
+  25% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(0%) scale(1);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateX(50%) scale(1.1);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateX(200%) scale(1);
+    opacity: 0.05;
+  }
+}
+
+@keyframes move-across-left {
+  0% {
+    transform: translateX(200%) scale(1);
+    opacity: 0.05;
+  }
+  25% {
+    transform: translateX(50%) scale(1.1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(0%) scale(1);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateX(-100%) scale(1);
+    opacity: 0.05;
+  }
+}
+
+.move-right {
+  animation: move-across-right 20s linear infinite;
+}
+
+.move-left {
+  animation: move-across-left 20s linear infinite;
+}
+
+/* Diagonal movement with heartbeat */
+@keyframes move-diagonal-right {
+  0% {
+    transform: translate(-100%, 100%) scale(1);
+    opacity: 0.05;
+  }
+  25% {
+    transform: translate(-25%, 75%) scale(1.1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(50%, 50%) scale(1);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translate(125%, 25%) scale(1.1);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(200%, 0%) scale(1);
+    opacity: 0.05;
+  }
+}
+
+@keyframes move-diagonal-left {
+  0% {
+    transform: translate(200%, 100%) scale(1);
+    opacity: 0.05;
+  }
+  25% {
+    transform: translate(125%, 75%) scale(1.1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(50%, 50%) scale(1);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translate(-25%, 25%) scale(1.1);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(-100%, 0%) scale(1);
+    opacity: 0.05;
+  }
+}
+
+.move-diagonal-right {
+  animation: move-diagonal-right 25s linear infinite;
+}
+
+.move-diagonal-left {
+  animation: move-diagonal-left 25s linear infinite;
+}
+
+/* Animation speeds */
+.speed-1 { animation-duration: 15s; }
+.speed-2 { animation-duration: 20s; }
+.speed-3 { animation-duration: 25s; }
+.speed-4 { animation-duration: 30s; }
+.speed-5 { animation-duration: 35s; }
+
+/* Delay classes */
+.delay-1 { animation-delay: 2s; }
+.delay-2 { animation-delay: 4s; }
+.delay-3 { animation-delay: 6s; }
+.delay-4 { animation-delay: 8s; }
+.delay-5 { animation-delay: 10s; }
+.delay-6 { animation-delay: 12s; }
+.delay-7 { animation-delay: 14s; }
+.delay-8 { animation-delay: 16s; }
+
+.heartbeat-path {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: dash 1.7s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+} 

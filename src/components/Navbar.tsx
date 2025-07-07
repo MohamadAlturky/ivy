@@ -23,12 +23,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 space-x-reverse">
-            <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-2 rounded-full">
-              <Heart className="h-6 w-6 text-white" />
+            <div className="  rounded-full">
+              <img src="/ivy/logo.jpg" alt="logo" className="rounded-full" style={{width: '60px', height: '60px'}} />
+              {/* <Heart className="h-6 w-6 text-white" /> */}
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            {/* <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               آيفي
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Navigation */}
