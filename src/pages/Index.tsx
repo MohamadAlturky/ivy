@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import '@/styles/medical-animations.css';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [activeService, setActiveService] = useState(0);
@@ -110,9 +111,12 @@ const Index = () => {
                 <Button
                   size="lg"
                   className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  asChild
                 >
-                  احجز موعدك الآن
-                  <Calendar className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <Link to="/doctors">
+                    احجز موعدك الآن
+                    <Calendar className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  </Link>
                 </Button>
 
                 <Button
@@ -319,9 +323,12 @@ const Index = () => {
           <Button
             size="lg"
             className="group bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            asChild
           >
-            احجز موعدك الآن
-            <Calendar className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+            <Link to="/doctors">
+              احجز موعدك الآن
+              <Calendar className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+            </Link>
           </Button>
         </div>
       </section>

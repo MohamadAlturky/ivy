@@ -11,6 +11,7 @@ import {
   Navigate
 } from "react-router-dom";
 import { BookingProvider } from "@/contexts/BookingContext";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -61,10 +62,17 @@ function Dashboard() {
   );
 }
 
+const AppLayout = () => (
+  <>
+    <ScrollToTop />
+    <Outlet />
+  </>
+);
+
 // Create router with Data Router API
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
+    <Route element={<AppLayout />}>
       {/* Public routes */}
       <Route path="/" element={<Index />} />
       <Route path="about" element={<About />} />
@@ -75,8 +83,6 @@ const router = createBrowserRouter(
 
       {/* Protected routes */}
       <Route element={<ProtectedRoute><Outlet /></ProtectedRoute>}>
-        {/* <Route path="dashboard" element={<Dashboard />} /> */}
-
         {/* Protected Booking routes */}
         <Route element={<BookingLayout />}>
           <Route path="booking/:doctorId" element={<BookingFlow />} />
